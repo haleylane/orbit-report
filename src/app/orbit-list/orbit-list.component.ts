@@ -11,10 +11,6 @@ export class OrbitListComponent implements OnInit {
 
   constructor() { 
 
-
-          /*let showWarning: boolean = shouldShowWarning();
-          console.log(showWarning);*/
-          //let showWarning: boolean = shouldShowWarning();
   }
   //7.3 is below
   sort(column: string): void {
