@@ -9,7 +9,8 @@ export class OrbitListComponent implements OnInit {
   @Input() satellites: Satellite[];
 
   constructor() { 
-    
+          /*let showWarning: boolean = shouldShowWarning();
+          console.log(showWarning);*/
   }
 
   ngOnInit() {

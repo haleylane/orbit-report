@@ -21,7 +21,7 @@ export class Satellite {
                 return false;
             }
         }
-        let showWarning: boolean = (shouldShowWarning(this.type) === true);*/
+        let showWarning: boolean = (shouldShowWarning() === true);*/
     }
     
     
