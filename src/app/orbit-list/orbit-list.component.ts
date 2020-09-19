@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Satellite } from '../satellite';
+
 @Component({
   selector: 'app-orbit-list',
   templateUrl: './orbit-list.component.html',
@@ -11,6 +12,7 @@ export class OrbitListComponent implements OnInit {
   constructor() { 
           /*let showWarning: boolean = shouldShowWarning();
           console.log(showWarning);*/
+          //let showWarning: boolean = shouldShowWarning();
   }
 
   ngOnInit() {
