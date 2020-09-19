@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'orbit-report';
   sourceList: Satellite[];
   displayList: Satellite[];
+  //spaceDebris: boolean ;
 
   constructor() {
     this.sourceList = [];
@@ -20,28 +21,16 @@ export class AppComponent {
        response.json().then(function(data) {
  
           let fetchedSatellites = data.satellites;
-          //console.log(fetchedSatellites.length);
           for(let i=0; i < fetchedSatellites.length; i++){
-            let satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational)
+            let satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].operational, fetchedSatellites[i].orbitType, fetchedSatellites[i].launchDate)
             this.sourceList.push(satellite);
-
-
-            /*let shouldShowWarning = function(): boolean {
-              if (satellite.type === 'Space Debris' ){
-                  //console.log(satellite.type)
-                  return true;
-              } else if (satellite.type !== 'Space Debris') {
-                  return false;
-              }
-          }
-          let showWarning: boolean = (shouldShowWarning() === true);
-          console.log(showWarning);*/
-
           }
        }.bind(this));
     }.bind(this));
 
  }
+
+
  search(searchTerm: string): void {
   let matchingSatellites: Satellite[] = [];
   searchTerm = searchTerm.toLowerCase();
