@@ -22,13 +22,22 @@ export class AppComponent {
           for(let i=0; i < fetchedSatellites.length; i++){
             let satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational)
             this.sourceList.push(satellite);
+
+
+            let shouldShowWarning = function(): boolean {
+              if (satellite.type === 'Space Debris' ){
+                  //console.log(satellite.type)
+                  return true;
+              } else if (satellite.type !== 'Space Debris') {
+                  return false;
+              }
           }
-          // TODO: loop over satellites
-          // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
-          // TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);
- 
+          let showWarning: boolean = (shouldShowWarning() === true);
+          console.log(showWarning);
+          
+          }
        }.bind(this));
     }.bind(this));
- 
+
  }
 }

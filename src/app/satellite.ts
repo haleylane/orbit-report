@@ -13,14 +13,17 @@ export class Satellite {
         this.type = type;
         this.operational = operational;
         this.launchDate = launchDate;
-    }
-
-    shouldShowWarning() {
-        if (this.type === 'Space Debris' ){
-            return true;
-        } else if (this.type !== 'Space Debris') {
-            return false;
+        /*
+        function shouldShowWarning(): boolean{
+            if (this.type === 'Space Debris'){
+                return true;
+            } else if (this.type !== 'Space Debris'){
+                return false;
+            }
         }
+        let showWarning: boolean = (shouldShowWarning(this.type) === true);*/
     }
+    
+    
     
 }
